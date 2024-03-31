@@ -1,89 +1,89 @@
-let products = [
+let classes = [
     {
       id: 1,
-       "title": "Musin",
+       "title": "cooking Class",
        "price": 20.00,
-       "images": "images/cooking.jpg",
-       spaces: 10,
+       "image": "images/cooking.jpg",
+       spaces: 5,
       
     },
     {
       id: 2,
-       title: "Cat Food, 25lb bag",
+       title: "Map Reading",
        price: 20.00,
-       "image": "images/cooking.jpg",
-       "spaces": 10,
+       "image": "images/map.jpg",
+       "spaces": 5,
       
     },
     {
       id: 3,
-       title: "Cat Food, 25lb bag",
+       title: "jQuery",
        price: 20.00,
        image: "images/jquery.jpg",
-       spaces: 10,
+       spaces: 5,
       
     },
 
     {
       id: 4,
-       title: "Cat Food, 25lb bag",
+       title: "Sports",
        price: 20.00,
        image: "images/sports.jpg",
-       spaces: 10,
+       spaces: 5,
       
     },
 
     {
       id: 5,
-       title: "Cat Food, 25lb bag",
-       price: 20.00,
+       title: "Robotics",
+       price: 80.00,
        image: "images/robotics.jpg",
-       spaces: 10,
+       spaces: 5,
       
     },
 
     {
       id: 6,
-       title: "Cat Food, 25lb bag",
+       title: "HTML",
        price: 20.00,
        image: "images/html.jpg",
-       spaces: 10,
+       spaces: 5,
       
     },
 
     {
       id: 7,
-       title: "Cat Food, 25lb bag",
-       price: 20.00,
-       image: "images/driving",
-       spaces: 10,
+       title: "Driving Class",
+       price: 100.00,
+       image: "images/driving.jpg",
+       spaces: 5,
       
     },
 
     {
       id: 8,
-       title: "Cat Food, 25lb bag",
-       price: 20.00,
-       image: "images/dance",
-       spaces: 10,
+       title: "Dance",
+       price: 30.00,
+       image: "images/dance.jpg",
+       spaces: 5,
       
     },
 
     {
       id: 9,
-       title: "Cat Food, 25lb bag",
+       title: "Creative Arts",
        price: 20.00,
-       image: "images/creative",
-       spaces: 10,
+       image: "images/creative.jpg",
+       spaces: 5,
       
     },
 
     {
       id: 10,
-       title: "Cat Food, 25lb bag",
-       price: 20.00,
-       "image": "images/math",
-       "spaces": 10,
+       title: "Mathematics.jpg,",
+       price: 80.00,
+       "image": "images/math.jpg",
+       "spaces": 5,
       
     },
   ]

@@ -4,13 +4,14 @@
     <title>MNH Learning</title>
     <script src="https://unpkg.com/vue"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-    <script src="products.js"></script>
+    <script src="classes.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 
 <body>
     <div id="app">
         <header>
+            
             <h1 v-text="sitename"></h1>
             <button v-on:click='showCheckout'>
                 {{cartItemCount}}
@@ -18,24 +19,24 @@
             </button>
         </header>
         <main>
-            <div v-if='showProduct' class="container">
-                <div v-for="product in sortedProducts" class="d-flex m-3">
-                    <h2 v-text="product.title"></h2>
+            <div v-if='showClasses' class="container">
+                <div v-for="classes in sortedClasses" class="d-flex m-3">
+                    <h2 v-text="classes.title"></h2>
                     <figure>
-                        <img v-bind:src="product.image">
+                        <img v-bind:src="classes.image">
                     </figure>
-                    <p v-html="product.description"></p>
-                    <p>Price: {{product.price}}</p>
-                    <p>Available supply: {{product.spaces -cartCount(product.id) }}</p>
+                    <p v-html="classes.description"></p>
+                    <p>Price: {{classes.price}}</p>
+                    <p>Available supply: {{classes.spaces -cartCount(classes.id) }}</p>
 
-                    <button v-on:click='addToCart(product)' v-if='canAddToCart(product)'>Add to cart</button>
+                    <button v-on:click='addToCart(classes)' v-if='canAddToCart(classes)'>Add to cart</button>
 
                     <button disabled="disabled" v-else>Add to cart</button>
 
-                    <span v-if='product.spaces === cartCount(product.id)'>All out!</span>
-                    <span v-else-if="product.spaces - cartCount(product.id) < 0">
-                         {{product.spaces - cartCount(product.id)}} Available
-                    </span>
+                    <span v-if='classes.spaces === cartCount(classes.id)'>All out!</span>
+                    <span v-else-if="classes.spaces - cartCount(classes.id) < 0">
+                         {{classes.spaces - cartCount(classes.id)}} Available
+                   </span>
                     <span v-else>Buy now!</span>
 
                    
@@ -62,27 +63,27 @@
         var webstore = new Vue({
             el: '#app',
             data: {
-                sitename: 'Vue.js MNH Learning',
-                products: products,
+                sitename: ' MNH Learning',
+                classes: classes,
                 cart: [],
-                showProduct: true,
+                showClasses: true,
                 order: {
                     Username: '',
                     number: '',
                 },
             },
             methods: {
-                addToCart(product) {
-                    this.cart.push(product.id);
+                addToCart(classes) {
+                    this.cart.push(classes.id);
                 },
-                showCheckout() {
-                    this.showProduct = this.showProduct ? false : true;
+                showCheckout()  {
+                    this.showClasses = this.showClasses ? false : true;
                 },
                 submitForm() {
                     alert('Order submitted!')
                 },
-                canAddToCart(product) {
-                    return product.spaces > this.cartCount(product.id);
+                canAddToCart(classes) {
+                    return classes.spaces > this.cartCount(classes.id);
                 },
                 cartCount(id) {
                     let count = 0;
@@ -98,8 +99,8 @@
                 cartItemCount() {
                     return this.cart.length;
                 },
-                sortedProducts() {
-                    let productsArray = this.products.slice(0);
+                sortedClasses() {
+                    let classesArray = this.classes.slice(0);
                     function compare(a, b) {
                         if (a.price > b.price)
                             return 1;
@@ -107,7 +108,7 @@
                             return -1;
                         return 0;
                     }
-                    return productsArray.sort(compare);
+                    return classesArray.sort(compare);
                 }
             },
         });
