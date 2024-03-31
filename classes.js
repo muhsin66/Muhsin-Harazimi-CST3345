@@ -84,6 +84,6 @@ let classes = [
        price: 80.00,
        "image": "images/math.jpg",
        "spaces": 5,
-      
+
     },
   ]
