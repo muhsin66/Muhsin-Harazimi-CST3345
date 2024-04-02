@@ -62,22 +62,23 @@
                             <div class="card-header d-flex">
                                 <div>
                                     <div>
-                                        <img class="img-fluid" style="width: 200px;" v-bind:src="product.image" alt="">
+                                        <img class="img-fluid" style="width: 150px; height: 150px;" v-bind:src="product.image" alt="">
                                     </div>
                                 </div>
                                 <i :class="product.icon" class="fs-1 ms-auto"></i>
                             </div>
                             <div class="card-body">
                                 <p>title: {{product.title}}</p>
-                                <p>price: {{product.price}} AED</p>
-                                <p>Spaces: {{product.spaces}}</p>
                                 <p>location: {{product.location}}</p>
+                                <p>Spaces: {{product.spaces}}</p><br>
+                                <p>price: {{product.price}} AED</p>
                             </div>
                             <div class="card-footer">
 
-                                <button class="btn btn-info rounded " v-on:click='addToCart(product)'
+                                <button class="btn btn-secondary rounded " v-on:click='addToCart(product)'
                                     :disabled="product.spaces === 0">Add to
-                                    cart</button>
+                                    cart</button><br>
+                                    <br>
                                 <!-- remove from cart button -->
                                 <button class="btn btn-danger rounded"
                                     v-on:click='removeProduct(product)'>Remove</button>
@@ -97,7 +98,7 @@
                                     <div class="col-sm-4">
                                         <!-- <i :class="item.lesson.icon" class="display-1 ms-auto"></i> -->
                                         <div>
-                                            <img v-bind:src="item.classes.image" alt="">
+                                            <img v-bind:src="item.classes.image" style="width: 200px;" class="col-sm-8 border rounded-3">
                                         </div>
                                     </div>
                                     <div class="col-sm-4">
